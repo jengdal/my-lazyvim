@@ -2,6 +2,24 @@ return {
   "folke/snacks.nvim",
   opts = {
     picker = {
+      layouts = {
+        vertical = {
+          layout = {
+            backdrop = false,
+            width = 0.9,
+            min_width = 80,
+            height = 0.9,
+            min_height = 30,
+            box = "vertical",
+            border = "rounded",
+            title = "{title} {live} {flags}",
+            title_pos = "center",
+            { win = "input", height = 1, border = "bottom" },
+            { win = "list", border = "none" },
+            { win = "preview", title = "{preview}", height = 0.4, border = "top" },
+          },
+        },
+      },
       win = {},
       matcher = {
         fuzzy = true, -- use fuzzy matching
@@ -25,23 +43,7 @@ return {
           return "vertical"
           --return vim.o.columns >= 120 and "default" or "vertical"
         end,
-
-        layout = {
-          backdrop = false,
-          width = 0.9,
-          min_width = 80,
-          height = 0.9,
-          min_height = 30,
-          box = "vertical",
-          border = "rounded",
-          title = "{title} {live} {flags}",
-          title_pos = "center",
-          { win = "input", height = 1, border = "bottom" },
-          { win = "list", border = "none" },
-          { win = "preview", title = "{preview}", height = 0.4, border = "top" },
-        },
       },
-
       formatters = {
         file = {
           filename_first = false, -- display filename before the file path
