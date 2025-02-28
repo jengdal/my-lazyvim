@@ -7,6 +7,6 @@ return {
       -- command line to execute git
       git_cmd = "git",
     })
-    require("telescope").load_extension("file_history")
+    -- require("telescope").load_extension("file_history")
   end,
 }
