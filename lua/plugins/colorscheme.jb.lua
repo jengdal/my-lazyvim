@@ -1,7 +1,7 @@
 return {
   "nickkadutskyi/jb.nvim",
   lazy = false,
-  enabled = true,
+  enabled = false,
   priority = 1000,
   opts = {},
   config = function()
