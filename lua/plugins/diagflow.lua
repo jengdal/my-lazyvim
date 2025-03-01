@@ -3,7 +3,8 @@
 return {
   "dgagn/diagflow.nvim",
   event = "LspAttach",
+  enabled = true,
   opts = {
-    show_borders = true,
+    show_borders = false,
   },
 }
