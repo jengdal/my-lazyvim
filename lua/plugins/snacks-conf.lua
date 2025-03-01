@@ -5,6 +5,8 @@ return {
   opts = {
     picker = {
 
+      -- Show most hidden files in both the file picker and the file explorer.
+      -- I want to be able to easily find files like .github/actions/blah.yml and .env
       sources = {
         explorer = {
           hidden = true,
@@ -19,6 +21,8 @@ return {
       },
 
       layouts = {
+
+        -- Modify the vertical layout to fit long file paths.
         vertical = {
           layout = {
             backdrop = false,
@@ -37,6 +41,8 @@ return {
         },
       },
       win = {},
+
+      -- Tweak the fuzzy matcher to prioritize file names, frequently and recently used files.
       matcher = {
         fuzzy = true, -- use fuzzy matching
         smartcase = true, -- use smartcase
@@ -60,6 +66,8 @@ return {
           --return vim.o.columns >= 120 and "default" or "vertical"
         end,
       },
+
+      -- Show as much of the file path as possible.
       formatters = {
         file = {
           filename_first = false, -- display filename before the file path
