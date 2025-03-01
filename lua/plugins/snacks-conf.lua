@@ -1,7 +1,23 @@
+local picker_excludes = { "node_modules", ".git", "__pycache__", ".idea", ".ruff_cache" }
+
 return {
   "folke/snacks.nvim",
   opts = {
     picker = {
+
+      sources = {
+        explorer = {
+          hidden = true,
+          ignored = true,
+          exclude = picker_excludes,
+        },
+        files = {
+          hidden = true,
+          ignored = true,
+          exclude = picker_excludes,
+        },
+      },
+
       layouts = {
         vertical = {
           layout = {
