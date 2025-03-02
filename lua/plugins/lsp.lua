@@ -4,8 +4,16 @@ return {
   opts = {
     ---@type lspconfig.options
     servers = {
-      -- pyright will be automatically installed with mason and loaded with lspconfig
-      -- pyright = {},
+      sqls = {
+        init_options = {
+          provideFormatter = false,
+        },
+      },
+      sqlls = {
+        init_options = {
+          provideFormatter = false,
+        },
+      },
       pyright = {
         settings = {
           pyright = {
