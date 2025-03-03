@@ -4,6 +4,7 @@ return {
   opts = {
     ---@type lspconfig.options
     servers = {
+      marksman = { mason = false },
       sqls = {
         init_options = {
           provideFormatter = false,
