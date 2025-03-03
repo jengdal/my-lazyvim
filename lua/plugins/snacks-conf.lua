@@ -1,22 +1,21 @@
-local picker_excludes = { "node_modules", ".git", "__pycache__", ".idea", ".ruff_cache" }
-
 return {
   "folke/snacks.nvim",
   opts = {
     picker = {
-
       -- Show most hidden files in both the file picker and the file explorer.
       -- I want to be able to easily find files like .github/actions/blah.yml and .env
       sources = {
         explorer = {
           hidden = true,
           ignored = true,
-          exclude = picker_excludes,
+          exclude = { "node_modules", ".git", "__pycache__", ".idea", ".ruff_cache" },
         },
         files = {
+
           hidden = true,
           ignored = true,
-          exclude = picker_excludes,
+          exclude = { "node_modules", ".git", "__pycache__", ".idea", ".ruff_cache" },
+        },
         recent = {
           -- Only show recent files from below the current working directory.
           filter = { cwd = true },
