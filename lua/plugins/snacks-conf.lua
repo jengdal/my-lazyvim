@@ -17,6 +17,9 @@ return {
           hidden = true,
           ignored = true,
           exclude = picker_excludes,
+        recent = {
+          -- Only show recent files from below the current working directory.
+          filter = { cwd = true },
         },
       },
 
