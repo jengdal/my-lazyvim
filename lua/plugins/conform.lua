@@ -1,31 +1,31 @@
 return {
   "stevearc/conform.nvim",
   opts = {
-    injected = {
-      options = {
-        ignore_errors = false,
-        lang_to_formatters = {
-          -- If you want to have a different formatter for injected sql:
-          -- sql = { "sleek_wrapper", lsp_format = "never" },
-        },
-        lang_to_ext = {
-          bash = "sh",
-          c_sharp = "cs",
-          elixir = "exs",
-          javascript = "js",
-          julia = "jl",
-          latex = "tex",
-          markdown = "md",
-          python = "py",
-          ruby = "rb",
-          rust = "rs",
-          teal = "tl",
-          typescript = "ts",
-          sql = "sql",
+    formatters = {
+      injected = {
+        options = {
+          ignore_errors = false,
+          lang_to_formatters = {
+            -- If you want to have a different formatter for injected sql:
+            sql = { "sleek_wrapper", lsp_format = "never" },
+          },
+          lang_to_ext = {
+            bash = "sh",
+            c_sharp = "cs",
+            elixir = "exs",
+            javascript = "js",
+            julia = "jl",
+            latex = "tex",
+            markdown = "md",
+            python = "py",
+            ruby = "rb",
+            rust = "rs",
+            teal = "tl",
+            typescript = "ts",
+            sql = "sql",
+          },
         },
       },
-    },
-    formatters = {
       sqlfmt = {
         -- pipx install shandy-sqlfmt
         command = "sqlfmt",
@@ -44,16 +44,32 @@ return {
       },
       pg_format = {
         command = "pg_format",
-        args = { "-w", "80", "--placeholder", "%[\\([a-z_]+\\)]?s", "--no-space-function", "--no-extra-line" },
+        -- args = {
+        --   "-w",
+        --   "80",
+        --   "--placeholder",
+        --   "(%(\\([\\w_]+\\))?s)+[\\b|\\W]",
+        --   -- "%[\\([a-z_]+\\)]?s",
+        --   "--no-space-function",
+        --   "--no-extra-line",
+        --   "--nogrouping",
+        --   "--comma-break",
+        --   "--spaces",
+        --   "4",
+        -- },
+      },
+      prettier_sql = {
+        command = "npx",
+        args = { "prettier", "--stdin-filepath", "prettify.sql" },
       },
     },
     formatters_by_ft = {
       markdown = { "prettier", "injected", lsp_format = "never" },
+      -- SQL files are formatted with this, injected SQL may be formatted with something else.
       sql = { "pg_format", lsp_format = "never" },
-      ["*"] = { "injected" },
-      -- We have to explicitly mention python here. I think because we're not using
-      -- any confirm formatters with python, only language servers.
-      python = { "injected" },
+      -- ["*"] = { "injected" },
+      -- Injected languages inside python should be formatted. Python itself should be formatted by the LSP system:
+      python = { "injected", lsp_format = "last" },
     },
   },
 }
