@@ -8,13 +8,13 @@ return {
         explorer = {
           hidden = true,
           ignored = true,
-          exclude = { "node_modules", ".git", "__pycache__", ".idea", ".ruff_cache" },
+          exclude = { "node_modules", ".git", "__pycache__", ".idea", ".ruff_cache", "DS_Store" },
         },
         files = {
 
           hidden = true,
           ignored = true,
-          exclude = { "node_modules", ".git", "__pycache__", ".idea", ".ruff_cache" },
+          exclude = { "node_modules", ".git", "__pycache__", ".idea", ".ruff_cache", "DS_Store" },
         },
         recent = {
           -- Only show recent files from below the current working directory.
