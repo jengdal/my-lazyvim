@@ -5,6 +5,6 @@ return {
   event = "LspAttach",
   enabled = true,
   opts = {
-    show_borders = false,
+    show_borders = true,
   },
 }
