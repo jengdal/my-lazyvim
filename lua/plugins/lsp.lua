@@ -4,18 +4,9 @@ return {
   opts = {
     ---@type lspconfig.options
     servers = {
-      marksman = { mason = false },
-      sqls = {
-        init_options = {
-          provideFormatter = false,
-        },
-      },
-      sqlls = {
-        init_options = {
-          provideFormatter = false,
-        },
-      },
-      pyright = {
+      pyright = { mason = false, autostart = false },
+      basedpyright = {
+        mason = true,
         settings = {
           pyright = {
             -- Using Ruff's import organizer
@@ -44,6 +35,17 @@ return {
             buffer = bufnr,
           })
         end,
+      },
+      marksman = { mason = false },
+      sqls = {
+        init_options = {
+          provideFormatter = false,
+        },
+      },
+      sqlls = {
+        init_options = {
+          provideFormatter = false,
+        },
       },
     },
   },
