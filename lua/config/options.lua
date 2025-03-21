@@ -12,4 +12,6 @@ vim.opt.relativenumber = false
 
 vim.g.lazyvim_prettier_needs_config = true
 
+vim.o.background = "light"
+
 vim.g.lazyvim_python_lsp = "basedpyright"
