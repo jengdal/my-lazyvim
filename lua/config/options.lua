@@ -15,11 +15,10 @@ vim.g.lazyvim_prettier_needs_config = true
 vim.o.background = "light"
 
 vim.g.lazyvim_python_lsp = "basedpyright"
-
-
-
--- -- Keybinding to toggle diagnostics (id)
--- vim.api.nvim_set_keymap('n', '<Leader>id', ':lua vim.cmd("DiagnosticsToggle")<CR>', { noremap = true, silent = true })
+-- vim.keymap.set("n", "gJ", function()
+--   local new_config = not vim.diagnostic.config().virtual_lines
+--   vim.diagnostic.config({ virtual_lines = new_config })
+-- end, { desc = "Toggle diagnostic virtual_lines" })
 
 if vim.g.neovide == true then
   vim.g.neovide_input_use_logo = 1
