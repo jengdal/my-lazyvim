@@ -11,6 +11,7 @@ return {
     sources = {
       per_filetype = {
         sql = { "snippets", "dadbod", "buffer" },
+        codecompanion = { "codecompanion" },
       },
       -- add vim-dadbod-completion to your completion providers
       providers = {
