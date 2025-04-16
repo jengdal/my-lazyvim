@@ -9,7 +9,7 @@ return {
       style = "light", -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
     })
     require("bamboo").load()
-    vim.o.background = "light"
-    vim.cmd.colorscheme("bamboo-light")
+    -- vim.o.background = "light"
+    -- vim.cmd.colorscheme("bamboo-light")
   end,
 }
