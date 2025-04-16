@@ -13,6 +13,7 @@ vim.opt.relativenumber = false
 vim.g.lazyvim_prettier_needs_config = true
 
 vim.o.background = "light"
+-- vim.cmd.colorscheme("bamboo-light")
 
 vim.g.lazyvim_python_lsp = "basedpyright"
 -- vim.keymap.set("n", "gJ", function()
@@ -28,4 +29,6 @@ if vim.g.neovide == true then
   vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
   vim.g.neovide_cursor_animation_length = 0
   vim.g.neovide_cursor_animate_in_insert_mode = false
+  -- vim.g.neovide_scroll_animation_length = 0.00
+  vim.g.neovide_hide_mouse_when_typing = true
 end
