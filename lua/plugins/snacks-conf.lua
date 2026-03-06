@@ -1,6 +1,7 @@
 return {
   "folke/snacks.nvim",
   opts = {
+    scroll = { enabled = false },
     picker = {
       -- Show most hidden files in both the file picker and the file explorer.
       -- I want to be able to easily find files like .github/actions/blah.yml and .env

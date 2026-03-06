@@ -21,6 +21,8 @@ vim.g.lazyvim_python_lsp = "basedpyright"
 --   vim.diagnostic.config({ virtual_lines = new_config })
 -- end, { desc = "Toggle diagnostic virtual_lines" })
 
+vim.g.root_spec = { "cwd" }
+
 if vim.g.neovide == true then
   vim.g.neovide_input_use_logo = 1
   vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
@@ -31,4 +33,7 @@ if vim.g.neovide == true then
   vim.g.neovide_cursor_animate_in_insert_mode = false
   -- vim.g.neovide_scroll_animation_length = 0.00
   vim.g.neovide_hide_mouse_when_typing = true
+  vim.g.neovide_scroll_animation_length = 0
 end
+
+vim.opt.sms = false

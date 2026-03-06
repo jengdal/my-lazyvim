@@ -1,6 +1,11 @@
 return {
   "stevearc/conform.nvim",
+  -- opts = function(_, opts)
+  --
+  -- end,
+  enabled = true,
   opts = {
+    -- ft_parsers = { html = "html" },
     formatters = {
       injected = {
         options = {
@@ -8,6 +13,7 @@ return {
           lang_to_formatters = {
             -- If you want to have a different formatter for injected sql:
             sql = { "sleek_wrapper", lsp_format = "never" },
+            html = { "prettier_html", lsp_format = "never" },
           },
           lang_to_ext = {
             bash = "sh",
@@ -23,6 +29,7 @@ return {
             teal = "tl",
             typescript = "ts",
             sql = "sql",
+            html = "html",
           },
         },
       },
@@ -62,14 +69,22 @@ return {
         command = "npx",
         args = { "prettier", "--stdin-filepath", "prettify.sql" },
       },
+      prettier_html = {
+        command = "npx",
+        args = { "prettier", "--stdin-filepath", "prettify.html" },
+      },
+      -- prettier = { command = "prettier" },
     },
     formatters_by_ft = {
       markdown = { "prettier", "injected", lsp_format = "never" },
       -- SQL files are formatted with this, injected SQL may be formatted with something else.
-      sql = { "pg_format", lsp_format = "never" },
+      sql = { "sleek_wrapper", lsp_format = "never" },
+      --sql = { "pg_format", lsp_format = "never" },
       -- ["*"] = { "injected" },
       -- Injected languages inside python should be formatted. Python itself should be formatted by the LSP system:
       python = { "injected", lsp_format = "last" },
+      html = { "prettier_html", lsp_format = "never" },
+      jinja2 = { "injected", "prettier_html", lsp_format = "last" },
     },
   },
 }

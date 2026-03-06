@@ -38,11 +38,13 @@ return {
       },
       marksman = { mason = false },
       sqls = {
+        mason = false,
         init_options = {
           provideFormatter = false,
         },
       },
       sqlls = {
+        mason = false,
         init_options = {
           provideFormatter = false,
         },
