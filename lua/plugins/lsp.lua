@@ -49,6 +49,10 @@ return {
           provideFormatter = false,
         },
       },
+      nil_ls = {
+        -- It's installed with nix home manager
+        mason = false,
+      },
     },
   },
 }
