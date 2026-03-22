@@ -53,6 +53,9 @@ return {
         -- It's installed with nix home manager
         mason = false,
       },
+      sourcekit = {
+        cmd = { "xcrun", "sourcekit-lsp" },
+      },
     },
   },
 }
