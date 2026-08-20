@@ -4,6 +4,7 @@ return {
   opts = {
     ---@type lspconfig.options
     servers = {
+      copilot = { enabled = false },
       pyright = { mason = false, autostart = false },
       basedpyright = {
         mason = true,
