@@ -23,6 +23,7 @@ vim.g.lazyvim_python_lsp = "basedpyright"
 
 vim.g.root_spec = { "cwd" }
 
+vim.g.snacks_animate = false
 if vim.g.neovide == true then
   vim.g.neovide_input_use_logo = 1
   vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
