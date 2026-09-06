@@ -9,13 +9,22 @@ return {
         explorer = {
           hidden = true,
           ignored = true,
-          exclude = { "node_modules", ".git", "__pycache__", ".idea", ".ruff_cache", "DS_Store" },
+          exclude = { "node_modules", ".git", "__pycache__", ".idea", ".ruff_cache", "DS_Store", ".devenv/shell-*.sh" },
         },
         files = {
 
           hidden = true,
           ignored = true,
-          exclude = { "node_modules", ".git", "__pycache__", ".idea", ".ruff_cache", "DS_Store", ".venv" },
+          exclude = {
+            "node_modules",
+            ".git",
+            "__pycache__",
+            ".idea",
+            ".ruff_cache",
+            "DS_Store",
+            ".venv",
+            ".devenv/shell-*.sh",
+          },
         },
         recent = {
           -- Only show recent files from below the current working directory.
