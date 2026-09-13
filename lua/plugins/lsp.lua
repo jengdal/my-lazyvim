@@ -57,6 +57,9 @@ return {
       sourcekit = {
         cmd = { "xcrun", "sourcekit-lsp" },
       },
+      denols = {
+        mason = false,
+      },
     },
   },
 }
