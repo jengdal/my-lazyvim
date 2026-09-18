@@ -74,6 +74,12 @@ return {
         args = { "prettier", "--stdin-filepath", "prettify.html" },
       },
       -- prettier = { command = "prettier" },
+      deno_fmt = {
+        -- Only format with deno_fmt in projects where denols is actually attached
+        condition = function(self, ctx)
+          return not vim.tbl_isempty(vim.lsp.get_clients({ bufnr = ctx.buf, name = "denols" }))
+        end,
+      },
     },
     formatters_by_ft = {
       markdown = { "prettier", "injected", lsp_format = "never" },
@@ -85,6 +91,12 @@ return {
       python = { "injected", lsp_format = "last" },
       html = { "prettier_html", lsp_format = "never" },
       jinja2 = { "injected", "prettier_html", lsp_format = "last" },
+      -- deno_fmt only actually runs when denols is attached (see condition above);
+      -- otherwise this list resolves to nothing available and formatting falls back to LSP.
+      typescript = { "deno_fmt" },
+      typescriptreact = { "deno_fmt" },
+      javascript = { "deno_fmt" },
+      javascriptreact = { "deno_fmt" },
     },
   },
 }
