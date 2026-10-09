@@ -41,3 +41,17 @@ if vim.g.neovide == true then
 end
 
 vim.opt.sms = false
+
+vim.opt.clipboard = "unnamedplus"
+
+if vim.env.SSH_TTY then
+  local osc52 = require("vim.ui.clipboard.osc52")
+  local function paste()
+    return vim.split(vim.fn.getreg('"'), "\n")
+  end
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = { ["+"] = osc52.copy("+"), ["*"] = osc52.copy("*") },
+    paste = { ["+"] = paste, ["*"] = paste },
+  }
+end
